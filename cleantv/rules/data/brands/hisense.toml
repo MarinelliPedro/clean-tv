@@ -1,0 +1,9 @@
+# Regras da Hisense (somente modelos Android TV / Google TV; VIDAA não é suportado).
+# Ainda NÃO validadas em TV real: só as regras genéricas valem.
+
+[meta]
+name = "Hisense (Android/Google TV)"
+brand = "Hisense"
+status = "nao-validado"
+match_manufacturer = ["hisense"]
+notes = "Sem regras específicas ainda. Pacotes do fabricante ficam como 'não tocar'."

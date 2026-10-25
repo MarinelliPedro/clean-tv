@@ -1,0 +1,42 @@
+{
+  "name": "android-tv-generic",
+  "_comment": "Perfil SINTÉTICO de Android TV 9 (interface antiga). Não é o inventário real de nenhuma TV. Simula um Android sem 'pm default-state'.",
+  "props": {
+    "ro.product.manufacturer": "Generic",
+    "ro.product.brand": "Generic",
+    "ro.product.model": "Android TV (simulada)",
+    "ro.product.device": "sim_atv",
+    "ro.build.version.release": "9",
+    "ro.build.version.sdk": "28",
+    "ro.build.fingerprint": "Generic/sim_atv/sim_atv:9/PTT0.000000.000/0:user/release-keys",
+    "ro.serialno": "SIMATV0001",
+    "ro.adb.secure": "1",
+    "sys.boot_completed": "1"
+  },
+  "features": ["android.software.leanback", "android.hardware.type.television"],
+  "packages": [
+    {"name": "android"},
+    {"name": "com.android.systemui"},
+    {"name": "com.android.tv.settings"},
+    {"name": "com.android.providers.settings"},
+    {"name": "com.android.vending", "leanback": "com.android.vending/com.google.android.finsky.tvmainactivity.TvMainActivity"},
+    {"name": "com.google.android.gms"},
+    {"name": "com.google.android.leanback.ime"},
+    {"name": "com.google.android.tvlauncher", "home": "com.google.android.tvlauncher/com.google.android.tvlauncher.MainActivity"},
+    {"name": "com.google.android.tvrecommendations"},
+    {"name": "com.google.android.katniss"},
+    {"name": "com.google.android.backdrop"},
+    {"name": "com.google.android.apps.mediashell"},
+    {"name": "com.google.android.youtube.tv", "leanback": "com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.ShellActivity"},
+    {"name": "com.google.android.play.games", "leanback": "com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity"},
+    {"name": "com.netflix.ninja", "leanback": "com.netflix.ninja/com.netflix.ninja.MainActivity"}
+  ],
+  "settings": {
+    "global": {"adb_enabled": "1", "development_settings_enabled": "1"},
+    "secure": {"screensaver_enabled": "1"}
+  },
+  "preferred_home": null,
+  "supports_default_state": false,
+  "hijack_home_without_stock": false,
+  "refuse_install": false
+}

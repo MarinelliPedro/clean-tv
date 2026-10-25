@@ -1,0 +1,275 @@
+# Regras da TCL.
+#
+# Evidência: inventário somente leitura (pm list + dumpsys package) de uma TCL Android TV 9,
+# ro.product.model = UnionTV, software V8-R41KT01-LF1V325, chipset Realtek, em 25/10/2026.
+# Aplicação real em 25/10/2026: com.tcl.bi, com.tcl.esticker, com.tcl.tvweishi e com.tcl.appmarket2
+# desativados, TV reiniciada e funcionando. Restauração ainda não executada na TV (só dry-run), então
+# o status é "parcial" e esses itens continuam opcionais ('ask').
+#
+# Regras de proteção valem para qualquer TCL (proteger a mais é sempre seguro). Regras opcionais
+# ficam restritas ao modelo onde a evidência foi colhida (models = ["^UnionTV$"]).
+
+[meta]
+name = "TCL"
+brand = "TCL"
+status = "parcial"
+match_manufacturer = ["tcl"]
+notes = "Aplicado numa TCL Android TV 9 real (UnionTV, V8-R41KT01): 16 pacotes, TV funcionando após reinício. Outros modelos: só as proteções valem. Algumas TCL recusam launchers de terceiros: nesse caso a troca de launcher para na primeira etapa."
+
+# ---------- TV, entradas e fontes ----------
+
+[[rule]]
+prefix = "com.tcl.tv"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Serviços de TV da TCL (sintonizador, entradas, imagem): protegido até validação no seu modelo."
+
+[[rule]]
+package = "com.tcl.tv"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Live TV da TCL: sintonizador, canais, gravação e busca."
+
+[[rule]]
+package = "com.tcl.tvinput"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Serviço de entrada de TV (TIF) da TCL."
+
+[[rule]]
+package = "com.tcl.tvpassthrough"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Entradas externas (HDMI/AV) da TCL."
+
+[[rule]]
+package = "com.tcl.sourcemananger"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Menu de fontes (TV, HDMI, AV) e atalhos de entrada."
+
+# ---------- Sistema, atualização e configuração ----------
+
+[[rule]]
+prefix = "com.tcl.settings"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Configurações da TCL (imagem, som, timers, atalhos)."
+
+[[rule]]
+prefix = "com.tcl.factory"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Menu de fábrica / testes da TCL."
+
+[[rule]]
+package = "com.tcl.versionUpdateApp"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Atualização de sistema da TCL; também contém a tela de restauração de fábrica."
+
+[[rule]]
+package = "com.tcl.rc.ota"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Atualização de firmware do controle remoto."
+
+[[rule]]
+package = "com.tcl.initsetup"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Configuração inicial da TV (primeiro uso, modo loja, instalação de canais)."
+
+[[rule]]
+package = "com.tcl.framework.custom"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Personalização do sistema da TCL (teclas especiais, reinício)."
+
+[[rule]]
+package = "com.tcl.systemuioverlay"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Overlay de recursos da interface do sistema."
+
+[[rule]]
+package = "com.android.ListenNetStateService"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Monitor de estado da rede instalado pelo fabricante (roda como sistema)."
+
+# ---------- Controle remoto e teclado ----------
+
+[[rule]]
+package = "com.tcl.autopair"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Pareamento automático do controle Bluetooth."
+
+[[rule]]
+package = "com.tcl.tcl_bt_rcu_service"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Serviço do controle remoto Bluetooth."
+
+[[rule]]
+package = "com.tcl.keycustomfunctionservice"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Funções das teclas do controle; também responde ao HOME como tela de reserva (FallbackHome)."
+
+[[rule]]
+package = "com.tcl.keyhelp"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Ajuda e teclas virtuais do controle."
+
+[[rule]]
+package = "com.tcl.inputmethod.international"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Teclado da TCL."
+
+# ---------- Manter ----------
+
+[[rule]]
+package = "com.tcl.ui_mediaCenter"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "Media Center: fotos, vídeos e músicas de pendrive/USB."
+
+[[rule]]
+package = "com.tcl.audioplayer"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "Player de áudio usado pelo Media Center."
+
+[[rule]]
+package = "com.tcl.imageplayer"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "Visualizador de fotos usado pelo Media Center."
+
+[[rule]]
+package = "com.tcl.videoplayer"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "Player de vídeo usado pelo Media Center."
+
+# ---------- Opcionais (evidência do modelo UnionTV) ----------
+
+[[rule]]
+package = "com.tcl.bi"
+category = "telemetry"
+action = "ask"
+confidence = "medium"
+models = ["^UnionTV$"]
+reason = "Coleta de dados da TCL ('BI'): embute Firebase Analytics e Crashlytics, lê logs do sistema (READ_LOGS) e identificadores do aparelho (READ_PHONE_STATE)."
+risk = "Nenhum recurso visível conhecido depende dele; apps da TCL deixam de enviar estatísticas."
+
+[[rule]]
+package = "com.tcl.esticker"
+category = "ads"
+action = "ask"
+confidence = "medium"
+models = ["^UnionTV$"]
+reason = "E-Sticker: adesivos promocionais sobre a imagem, usados no modo loja (demonstração)."
+risk = "Nenhum em uso doméstico."
+
+[[rule]]
+package = "com.tcl.tvweishi"
+category = "bloatware"
+action = "ask"
+confidence = "medium"
+models = ["^UnionTV$"]
+reason = "TV Guard / Gerenciador da TCL: limpeza de memória e gerenciamento de apps; lê o uso dos apps (PACKAGE_USAGE_STATS) e logs do sistema. Aparece na tela inicial."
+risk = "O app de limpeza/gerenciador da TCL some."
+
+[[rule]]
+package = "com.tcl.appmarket2"
+category = "bloatware"
+action = "ask"
+confidence = "low"
+models = ["^UnionTV$"]
+reason = "Loja de apps da TCL (a Play Store continua funcionando). Também atualiza apps da própria TCL."
+risk = "Apps da TCL deixam de receber atualização pela loja da TCL."
+
+# ---------- Não tocar (documentado) ----------
+
+[[rule]]
+package = "com.tcl.common.terminalmanagerplus"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "Gerenciamento remoto da TCL (EventService, ConfigProvider): provável telemetria, mas outros apps da TCL leem a configuração dele. Não tocar até testar."
+
+[[rule]]
+package = "com.tcl.xian.StartandroidService"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "Autenticação do aparelho nos serviços da TCL (DeviceAuthenCommon). Desativar pode quebrar a loja e a conta TCL."
+
+[[rule]]
+package = "com.tcl.useragreement"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "Termos de uso e consentimento da TCL. Desativar pode fazer o aviso voltar ou travar serviços que dependem do aceite."
+
+[[rule]]
+package = "com.tcl.usercenter"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "Conta TCL (login e vínculo com celular)."
+
+[[rule]]
+package = "com.tcl.partnercustomizer"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "TCL Channel (atalho na tela inicial) + personalização da TCL para a tela inicial do Android TV e tela do botão T do controle. Roda como sistema; efeito de desativar não verificado."
+
+[[rule]]
+package = "com.tcl.partnercustomizer.resource"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "Recursos da personalização da TCL. Contém LauncherDefaultService, que pode forçar a tela inicial original como padrão (atenção na troca de launcher)."
+
+[[rule]]
+package = "com.tcl.appstatecontroller"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "Controle de estado de apps da TCL (reage a rede e instalação de apps). Função exata não verificada."
+
+[[rule]]
+package = "com.tcl.copydatatotv"
+category = "unknown"
+action = "keep"
+confidence = "low"
+reason = "Cópia de dados para a TV na inicialização (provável provisionamento de fábrica)."

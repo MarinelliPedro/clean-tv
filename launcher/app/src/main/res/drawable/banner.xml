@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Banner do Clean TV (identidade própria): tela arredondada com um brilho de "limpo". -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <path android:pathData="M0,0h320v180h-320z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="320"
+                android:endY="180"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear">
+                <item android:color="#FF1C2140" android:offset="0" />
+                <item android:color="#FF0A0C16" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:pathData="M121,48h78a16,16 0,0 1,16 16v52a16,16 0,0 1,-16 16h-78a16,16 0,0 1,-16 -16v-52a16,16 0,0 1,16 -16z"
+        android:strokeWidth="6"
+        android:strokeColor="#FFFFFFFF" />
+    <path
+        android:fillColor="#FF8FD8FF"
+        android:pathData="M160,64Q160,90 186,90Q160,90 160,116Q160,90 134,90Q160,90 160,64Z" />
+</vector>

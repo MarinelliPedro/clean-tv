@@ -1,0 +1,36 @@
+name: Problema
+description: Algo deu errado com a ferramenta ou com o launcher.
+title: "[Problema] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Se a TV ficou num estado estranho, primeiro tente `python -m cleantv restore --ip <IP>`
+        ou os scripts de emergência em `~/.cleantv/devices/<id-da-tv>/` (veja docs/TROUBLESHOOTING.md).
+        Antes de colar logs, apague o IP e o número de série da TV se não quiser publicá-los.
+  - type: input
+    id: tv
+    attributes:
+      label: TV (marca, modelo, Android)
+    validations:
+      required: true
+  - type: input
+    id: comando
+    attributes:
+      label: Comando que você rodou
+      placeholder: "python -m cleantv run --ip 192.168.0.40 --apply"
+    validations:
+      required: true
+  - type: textarea
+    id: aconteceu
+    attributes:
+      label: O que aconteceu e o que você esperava
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Trecho do log
+      description: "Os logs ficam em `~/.cleantv/logs/`."
+      render: text

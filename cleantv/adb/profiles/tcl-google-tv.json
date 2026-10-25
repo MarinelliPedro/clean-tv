@@ -1,0 +1,77 @@
+{
+  "name": "tcl-google-tv",
+  "_comment": "Perfil SINTÉTICO para testes. Não é o inventário real de nenhuma TV. Pacotes com '.sim.' no nome são fictícios.",
+  "props": {
+    "ro.product.manufacturer": "TCL",
+    "ro.product.brand": "TCL",
+    "ro.product.model": "Smart TV Google TV (simulada)",
+    "ro.product.device": "sim_tcl_gtv",
+    "ro.build.version.release": "11",
+    "ro.build.version.sdk": "30",
+    "ro.build.fingerprint": "TCL/sim_tcl_gtv/sim_tcl_gtv:11/RTT0.000000.000/0:user/release-keys",
+    "ro.serialno": "SIMTCL0001",
+    "ro.adb.secure": "1",
+    "sys.boot_completed": "1"
+  },
+  "features": [
+    "android.software.leanback",
+    "android.software.live_tv",
+    "android.hardware.type.television"
+  ],
+  "packages": [
+    {"name": "android"},
+    {"name": "com.android.systemui"},
+    {"name": "com.android.shell"},
+    {"name": "com.android.tv.settings"},
+    {"name": "com.android.providers.settings"},
+    {"name": "com.android.providers.tv"},
+    {"name": "com.android.printspooler", "state": 3},
+    {"name": "com.android.dreams.basic"},
+    {"name": "com.android.vending", "leanback": "com.android.vending/com.google.android.finsky.tvmainactivity.TvMainActivity"},
+    {"name": "com.google.android.gms"},
+    {"name": "com.google.android.gsf"},
+    {"name": "com.google.android.webview"},
+    {"name": "com.google.android.inputmethod.latin"},
+    {"name": "com.google.android.tv.remote.service"},
+    {"name": "com.google.android.marvin.talkback"},
+    {"name": "com.google.android.apps.tv.launcherx", "home": "com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity"},
+    {"name": "com.google.android.tungsten.setupwraith", "home": "com.google.android.tungsten.setupwraith/com.google.android.tungsten.setupwraith.MainActivity"},
+    {"name": "com.google.android.tvrecommendations"},
+    {"name": "com.google.android.katniss"},
+    {"name": "com.google.android.apps.mediashell"},
+    {"name": "com.google.android.apps.tv.dreamx"},
+    {"name": "com.google.android.feedback"},
+    {"name": "com.google.android.tv", "leanback": "com.google.android.tv/com.android.tv.MainActivity"},
+    {"name": "com.google.android.youtube.tv", "leanback": "com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.ShellActivity"},
+    {"name": "com.google.android.youtube.tvmusic", "leanback": "com.google.android.youtube.tvmusic/com.google.android.apps.youtube.tvmusic.activities.MainActivity"},
+    {"name": "com.google.android.play.games", "leanback": "com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity"},
+    {"name": "com.google.android.videos", "leanback": "com.google.android.videos/com.google.android.apps.play.movies.tv.TvLauncherActivity"},
+    {"name": "com.netflix.ninja", "leanback": "com.netflix.ninja/com.netflix.ninja.MainActivity"},
+    {"name": "com.amazon.amazonvideo.livingroom", "leanback": "com.amazon.amazonvideo.livingroom/com.amazon.ignition.IgnitionActivity"},
+    {"name": "com.disney.disneyplus", "system": false, "leanback": "com.disney.disneyplus/com.bamtechmedia.dominguez.main.MainActivity"},
+    {"name": "com.spotify.tv.android", "system": false, "leanback": "com.spotify.tv.android/com.spotify.tv.android.SpotifyTVActivity"},
+    {"name": "com.mediatek.tvinput"},
+    {"name": "com.tcl.tv"},
+    {"name": "com.tcl.settings"},
+    {"name": "com.tcl.sim.ota"},
+    {"name": "com.tcl.sim.adservice"},
+    {"name": "com.tcl.sim.channelstore", "leanback": "com.tcl.sim.channelstore/com.tcl.sim.channelstore.MainActivity"}
+  ],
+  "settings": {
+    "global": {
+      "adb_enabled": "1",
+      "development_settings_enabled": "1",
+      "window_animation_scale": "1.0",
+      "transition_animation_scale": "1.0",
+      "animator_duration_scale": "1.0"
+    },
+    "secure": {
+      "screensaver_enabled": "1",
+      "screensaver_components": "com.google.android.apps.tv.dreamx/.service.DreamService"
+    }
+  },
+  "preferred_home": null,
+  "supports_default_state": true,
+  "hijack_home_without_stock": false,
+  "refuse_install": false
+}

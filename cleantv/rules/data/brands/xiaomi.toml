@@ -1,0 +1,22 @@
+# Regras da Xiaomi / Mi TV. Ainda NÃO validadas em TV real.
+
+[meta]
+name = "Xiaomi / Mi TV"
+brand = "Xiaomi"
+status = "nao-validado"
+match_manufacturer = ["xiaomi"]
+notes = "PatchWall (com.mitv.tvhome) é o launcher do fabricante em parte dos modelos."
+
+[[rule]]
+package = "com.mitv.tvhome"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "PatchWall, tela inicial da Xiaomi. Só é desativada na troca de launcher, depois de validar o novo."
+
+[[rule]]
+package = "com.duokan.factorytest"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "App de teste de fábrica da Xiaomi. Responde ao botão HOME, mas não é um launcher utilizável."

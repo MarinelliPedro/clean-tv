@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clean TV</string>
+    <string name="dream_name">Relógio Clean TV</string>
+
+    <string name="greeting_morning">Bom dia</string>
+    <string name="greeting_afternoon">Boa tarde</string>
+    <string name="greeting_night">Boa noite</string>
+
+    <string name="hero_empty">Carregando apps…</string>
+    <string name="all_apps">Todos os apps</string>
+    <string name="recent_apps">Recentes</string>
+    <string name="no_apps">Nenhum app encontrado.</string>
+
+    <string name="shortcut_inputs">Entradas</string>
+    <string name="shortcut_hdmi">HDMI / AV</string>
+    <string name="shortcut_live_tv">TV ao vivo</string>
+    <string name="shortcut_network">Rede</string>
+    <string name="shortcut_settings">Ajustes</string>
+    <string name="shortcut_customize">Personalizar</string>
+    <string name="shortcut_inputs_hint">Escolher a fonte de sinal</string>
+    <string name="shortcut_hdmi_hint">Ir direto para um HDMI ou AV</string>
+    <string name="shortcut_live_tv_hint">Canais da antena / TV ao vivo</string>
+    <string name="shortcut_network_hint">Wi-Fi e cabo de rede</string>
+    <string name="shortcut_settings_hint">Configurações da TV</string>
+    <string name="shortcut_customize_hint">Tema, colunas, relógio e mais</string>
+
+    <string name="dock_add_slot">Adicionar ao dock</string>
+    <string name="dock_add">Adicionar ao dock</string>
+    <string name="dock_remove">Remover do dock</string>
+    <string name="move_left">Mover para a esquerda</string>
+    <string name="move_right">Mover para a direita</string>
+    <string name="hide_app">Ocultar da grade</string>
+    <string name="app_info">Informações do app</string>
+    <string name="dock_full">O dock já tem 4 apps. Remova um antes.</string>
+    <string name="pick_app">Escolha um app para o dock</string>
+    <string name="cannot_open">Não foi possível abrir %1$s</string>
+    <string name="no_inputs">Nenhuma entrada encontrada nesta TV</string>
+    <string name="no_live_tv">App de TV ao vivo não encontrado</string>
+    <string name="inputs_title">Entradas</string>
+
+    <string name="settings_title">Personalizar</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_wallpaper">Papel de parede</string>
+    <string name="settings_glow">Brilho da arte do app</string>
+    <string name="settings_backdrop">Fundo com a arte do app</string>
+    <string name="settings_motion">Fundo em movimento</string>
+    <string name="settings_columns">Colunas da grade</string>
+    <string name="settings_clock">Relógio</string>
+    <string name="settings_greeting">Saudação</string>
+    <string name="settings_hidden">Apps ocultos</string>
+    <string name="settings_order">Ordem dos apps</string>
+    <string name="settings_screensaver">Protetor de tela</string>
+    <string name="settings_about">Sobre</string>
+    <string name="value_on">Ligado</string>
+    <string name="value_off">Desligado</string>
+    <string name="value_wallpaper_theme">Gradiente do tema</string>
+    <string name="value_wallpaper_black">Preto puro</string>
+    <string name="value_clock_24">24 horas</string>
+    <string name="value_clock_12">12 horas</string>
+    <string name="value_hidden">%1$d oculto(s) · OK mostra todos</string>
+    <string name="value_order">OK volta à ordem alfabética</string>
+    <string name="value_screensaver">OK abre o seletor (escolha \"Relógio Clean TV\")</string>
+    <string name="value_about">Clean TV %1$s · sem internet, sem rastreamento · fonte Inter (OFL)</string>
+
+    <string name="theme_noite">Noite</string>
+    <string name="theme_grafite">Grafite</string>
+    <string name="theme_oceano">Oceano</string>
+    <string name="theme_aurora">Aurora</string>
+</resources>

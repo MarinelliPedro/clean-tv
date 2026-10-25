@@ -1,0 +1,8 @@
+# Regras da Skyworth. Ainda NÃO validadas em TV real: só as regras genéricas valem.
+
+[meta]
+name = "Skyworth"
+brand = "Skyworth"
+status = "nao-validado"
+match_manufacturer = ["skyworth"]
+notes = "Sem regras específicas ainda. Pacotes do fabricante ficam como 'não tocar'."

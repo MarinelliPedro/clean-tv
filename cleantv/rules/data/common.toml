@@ -1,0 +1,199 @@
+# Regras genéricas para Android TV / Google TV.
+#
+# Campos de cada [[rule]]:
+#   package ou prefix   nome exato ou prefixo do pacote
+#   category            ads | telemetry | bloatware | keep | critical | unknown
+#   action              disable (proposto, já marcado) | ask (opcional) | keep | protect (nunca)
+#   confidence          high | medium | low. 'disable' exige 'high', a não ser que haja choice_group.
+#   choice_group        assistant | chromecast | updates | screensaver: a ação só vale se você
+#                       responder que NÃO quer manter aquele recurso.
+#   reason, risk        texto mostrado no plano
+#   platforms, min_sdk, max_sdk, models (regex)   filtros opcionais
+#
+# Pacotes essenciais (Configurações, Play Store, rede, teclado, controle, chipset...) ficam
+# protegidos no código (cleantv/rules/safety.py) e não dependem deste arquivo.
+
+[meta]
+name = "Android TV / Google TV (genérico)"
+status = "parcial"
+notes = "Pacotes do Google presentes na maioria das TVs. Confiança 'high' só para apps cuja desativação é inofensiva."
+
+# ---------- Launchers originais ----------
+# Só são desativados na etapa de troca de launcher, depois que o novo estiver validado.
+
+[[rule]]
+package = "com.google.android.apps.tv.launcherx"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Tela inicial do Google TV (banners e sugestões patrocinadas). Só é desativada na troca de launcher, depois de validar o novo."
+risk = "Sem outro launcher funcionando, a TV fica sem tela inicial."
+
+[[rule]]
+package = "com.google.android.tvlauncher"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Tela inicial do Android TV. Só é desativada na troca de launcher, depois de validar o novo."
+
+[[rule]]
+package = "com.google.android.leanbacklauncher"
+category = "critical"
+action = "protect"
+confidence = "high"
+reason = "Tela inicial antiga do Android TV. Só é desativada na troca de launcher, depois de validar o novo."
+
+# ---------- Anúncios / conteúdo patrocinado ----------
+
+[[rule]]
+package = "com.google.android.tvrecommendations"
+category = "ads"
+action = "ask"
+confidence = "medium"
+reason = "Serviço de recomendações: alimenta as fileiras de conteúdo sugerido/patrocinado da tela inicial original."
+risk = "A tela inicial original perde as fileiras de recomendações; alguns apps deixam de publicar 'canais'."
+
+[[rule]]
+package = "com.google.android.leanbacklauncher.recommendations"
+category = "ads"
+action = "ask"
+confidence = "medium"
+reason = "Recomendações do launcher antigo do Android TV (fileira de sugestões)."
+risk = "A fileira de sugestões some da tela inicial original."
+
+# ---------- Telemetria / rastreamento ----------
+
+[[rule]]
+package = "tv.inscape.tvclient.inscapeacr"
+category = "telemetry"
+action = "disable"
+confidence = "high"
+reason = "Cliente ACR (Inscape): identifica o que passa na tela para fins de publicidade. Só precisa de internet para funcionar."
+risk = "Nenhum recurso visível depende dele."
+
+[[rule]]
+package = "com.google.android.tv.bugreportsender"
+category = "telemetry"
+action = "ask"
+confidence = "medium"
+reason = "Envia relatórios de erro do Android TV ao Google, com acesso aos logs do sistema (READ_LOGS, DUMP)."
+risk = "Relatórios de erro deixam de ser enviados."
+
+[[rule]]
+package = "com.google.android.feedback"
+category = "telemetry"
+action = "ask"
+confidence = "medium"
+reason = "Envio de feedback e relatórios de erro ao Google."
+risk = "Relatórios de erro deixam de ser enviados."
+
+# ---------- Possível bloatware ----------
+
+[[rule]]
+package = "com.google.android.youtube.tvmusic"
+category = "bloatware"
+action = "disable"
+confidence = "high"
+reason = "YouTube Music pré-instalado."
+risk = "O app YouTube Music some (reativável a qualquer momento)."
+
+[[rule]]
+package = "com.google.android.music"
+category = "bloatware"
+action = "disable"
+confidence = "high"
+reason = "Google Play Música: o Google encerrou o serviço em 2020; o app não funciona mais."
+risk = "Nenhum: o serviço não existe mais."
+
+[[rule]]
+package = "com.google.android.play.games"
+category = "bloatware"
+action = "disable"
+confidence = "high"
+reason = "Google Play Games: raramente usado em TVs."
+risk = "Jogos que exigem Play Games pedem para reativá-lo."
+
+[[rule]]
+package = "com.google.android.videos"
+category = "bloatware"
+action = "ask"
+confidence = "medium"
+reason = "Loja de filmes do Google (Google TV / Play Filmes). No Google TV, integra a aba de biblioteca da tela inicial original."
+risk = "Filmes comprados no Google deixam de abrir até reativar."
+
+# ---------- Grupos de escolha ----------
+
+[[rule]]
+package = "com.google.android.katniss"
+category = "keep"
+action = "disable"
+confidence = "high"
+choice_group = "assistant"
+reason = "App Google para TV: busca e Assistente por voz (botão de microfone do controle)."
+risk = "O botão de voz do controle e a busca por voz param de funcionar."
+
+[[rule]]
+package = "com.google.android.speech.pumpkin"
+category = "keep"
+action = "disable"
+confidence = "medium"
+choice_group = "assistant"
+reason = "Comandos de voz offline do Assistente (só é usado por ele)."
+risk = "Nenhum além de perder o Assistente."
+
+[[rule]]
+package = "com.google.android.apps.mediashell"
+category = "keep"
+action = "disable"
+confidence = "high"
+choice_group = "chromecast"
+reason = "Chromecast integrado: permite transmitir do celular para a TV."
+risk = "O botão de transmitir dos apps do celular deixa de encontrar a TV."
+
+[[rule]]
+package = "com.google.android.apps.tv.dreamx"
+category = "bloatware"
+action = "disable"
+confidence = "medium"
+choice_group = "screensaver"
+reason = "Modo ambiente do Google TV: protetor de tela com fotos e sugestões do Google."
+risk = "Se o protetor de tela do sistema apontar para ele, a TV passa a usar o protetor básico ou nenhum."
+
+[[rule]]
+package = "com.google.android.backdrop"
+category = "bloatware"
+action = "disable"
+confidence = "medium"
+choice_group = "screensaver"
+reason = "Backdrop: protetor de tela do Android TV."
+risk = "Se o protetor de tela do sistema apontar para ele, a TV passa a usar o protetor básico ou nenhum."
+
+# ---------- Manter ----------
+
+[[rule]]
+package = "com.android.dreams.basic"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "Protetor de tela básico do Android (alternativa leve)."
+
+[[rule]]
+package = "com.google.android.marvin.talkback"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "Acessibilidade (leitor de tela)."
+
+[[rule]]
+package = "com.google.android.tts"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "Voz do sistema (acessibilidade e Assistente)."
+
+[[rule]]
+package = "com.google.android.youtube.tv"
+category = "keep"
+action = "keep"
+confidence = "high"
+reason = "YouTube: app de streaming."

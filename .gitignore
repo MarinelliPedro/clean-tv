@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+# dados locais da ferramenta, se alguém usar --data-dir dentro do projeto
+.cleantv/
+# launcher Android (build roda em C:\dev; aqui só código e prints)
+launcher/.gradle/
+launcher/build/
+launcher/app/build/
+launcher/dist/
+launcher/local.properties
+*.jks
+signing.properties
+# arquivos pessoais e de editor
+Briefing para o Claude*.md
+.claude/
+.vscode/
+.idea/
+*.log

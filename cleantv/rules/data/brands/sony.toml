@@ -1,0 +1,8 @@
+# Regras da Sony (Bravia). Ainda NÃO validadas em TV real: só as regras genéricas valem.
+
+[meta]
+name = "Sony Bravia"
+brand = "Sony"
+status = "nao-validado"
+match_manufacturer = ["sony"]
+notes = "Sem regras específicas ainda. Pacotes do fabricante ficam como 'não tocar'."

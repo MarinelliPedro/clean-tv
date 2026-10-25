@@ -1,0 +1,46 @@
+name: Nova TV
+description: Conte como a ferramenta se saiu num modelo de TV (ou peça suporte a ele).
+title: "[Nova TV] Marca Modelo"
+labels: ["nova-tv"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado! Cada modelo testado deixa as regras mais seguras para todo mundo.
+        Antes de anexar arquivos, confira se não há dados que você não quer publicar (por exemplo, o número de série).
+  - type: input
+    id: modelo
+    attributes:
+      label: Marca e modelo
+      placeholder: "TCL 55C735"
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Versão do Android e interface
+      placeholder: "Google TV, Android 11"
+    validations:
+      required: true
+  - type: dropdown
+    id: etapa
+    attributes:
+      label: Até onde você chegou
+      options:
+        - Só o inventário (somente leitura)
+        - Dry-run do run
+        - Aplicação (run --apply)
+        - Aplicação e restore
+        - Launcher Clean TV como tela inicial
+    validations:
+      required: true
+  - type: textarea
+    id: inventario
+    attributes:
+      label: Inventário
+      description: "Resultado de `python -m cleantv inventory --ip <IP> --json minha-tv.json`. Arraste o arquivo para cá."
+  - type: textarea
+    id: resultado
+    attributes:
+      label: O que funcionou e o que não funcionou
+      description: Pacotes que você desativou, algo que parou de funcionar, se o restore deixou tudo como antes.

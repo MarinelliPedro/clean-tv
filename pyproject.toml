@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cleantv"
+version = "0.2.0"
+description = "Limpeza reversível de Android TV / Google TV via ADB na rede local, sem root."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "MarinelliPedro" }]
+keywords = ["android-tv", "google-tv", "adb", "debloat", "launcher"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/MarinelliPedro/clean-tv"
+Issues = "https://github.com/MarinelliPedro/clean-tv/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+cleantv = "cleantv.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cleantv*"]
+
+[tool.setuptools.package-data]
+cleantv = ["rules/data/*.toml", "rules/data/brands/*.toml", "adb/profiles/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

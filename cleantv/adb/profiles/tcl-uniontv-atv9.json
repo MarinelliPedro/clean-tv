@@ -1,0 +1,405 @@
+{
+  "name": "tcl-uniontv-atv9",
+  "_comment": "Gerado do inventário somente leitura de uma TCL real (UnionTV, software V8-R41KT01-LF1V325, Android 9) em 25/10/2026. Número de série substituído por um fictício.",
+  "props": {
+    "ro.product.manufacturer": "TCL",
+    "ro.product.brand": "TCL",
+    "ro.product.model": "UnionTV",
+    "ro.product.device": "UnionTV",
+    "ro.build.version.release": "9",
+    "ro.build.version.sdk": "28",
+    "ro.build.fingerprint": "TCL/UnionTV/UnionTV:9/PPR2.180905.006.A1/builder.20201115.105034:user/release-keys",
+    "ro.serialno": "SIMTCLATV9",
+    "ro.adb.secure": "1",
+    "sys.boot_completed": "1"
+  },
+  "features": [
+    "android.software.leanback",
+    "android.software.live_tv",
+    "android.hardware.type.television"
+  ],
+  "packages": [
+    {
+      "name": "android"
+    },
+    {
+      "name": "android.autoinstalls.config.tcl.device"
+    },
+    {
+      "name": "br.tv.watch.watchbrasil.androidtv",
+      "system": false,
+      "leanback": "br.tv.watch.watchbrasil.androidtv/br.tv.watch.ctv.ui.main.MainActivity"
+    },
+    {
+      "name": "com.amazon.amazonvideo.livingroom",
+      "leanback": "com.amazon.amazonvideo.livingroom/com.amazon.ignition.IgnitionActivity"
+    },
+    {
+      "name": "com.android.ListenNetStateService"
+    },
+    {
+      "name": "com.android.backupconfirm"
+    },
+    {
+      "name": "com.android.bluetooth"
+    },
+    {
+      "name": "com.android.captiveportallogin"
+    },
+    {
+      "name": "com.android.certinstaller"
+    },
+    {
+      "name": "com.android.companiondevicemanager"
+    },
+    {
+      "name": "com.android.cts.ctsshim"
+    },
+    {
+      "name": "com.android.cts.priv.ctsshim"
+    },
+    {
+      "name": "com.android.defcontainer"
+    },
+    {
+      "name": "com.android.dreams.basic"
+    },
+    {
+      "name": "com.android.externalstorage"
+    },
+    {
+      "name": "com.android.gallery3d"
+    },
+    {
+      "name": "com.android.htmlviewer"
+    },
+    {
+      "name": "com.android.inputdevices"
+    },
+    {
+      "name": "com.android.keychain"
+    },
+    {
+      "name": "com.android.location.fused"
+    },
+    {
+      "name": "com.android.pacprocessor"
+    },
+    {
+      "name": "com.android.printspooler"
+    },
+    {
+      "name": "com.android.providers.calendar"
+    },
+    {
+      "name": "com.android.providers.contacts"
+    },
+    {
+      "name": "com.android.providers.downloads"
+    },
+    {
+      "name": "com.android.providers.media"
+    },
+    {
+      "name": "com.android.providers.settings"
+    },
+    {
+      "name": "com.android.providers.tv"
+    },
+    {
+      "name": "com.android.providers.userdictionary"
+    },
+    {
+      "name": "com.android.proxyhandler"
+    },
+    {
+      "name": "com.android.se"
+    },
+    {
+      "name": "com.android.settings.intelligence"
+    },
+    {
+      "name": "com.android.sharedstoragebackup"
+    },
+    {
+      "name": "com.android.shell"
+    },
+    {
+      "name": "com.android.statementservice"
+    },
+    {
+      "name": "com.android.systemui"
+    },
+    {
+      "name": "com.android.tv.settings",
+      "home": "com.android.tv.settings/com.android.tv.settings.system.FallbackHome"
+    },
+    {
+      "name": "com.android.vending",
+      "leanback": "com.android.vending/com.google.android.finsky.tvmainactivity.TvMainActivity"
+    },
+    {
+      "name": "com.android.vpndialogs"
+    },
+    {
+      "name": "com.android.wallpaper.livepicker"
+    },
+    {
+      "name": "com.android.wallpaperbackup"
+    },
+    {
+      "name": "com.disney.disneyplus",
+      "system": false,
+      "leanback": "com.disney.disneyplus/com.bamtechmedia.dominguez.main.MainActivity"
+    },
+    {
+      "name": "com.globo.globotv",
+      "system": false,
+      "leanback": "com.globo.globotv/com.globo.globotv.splashtv.SplashActivity"
+    },
+    {
+      "name": "com.google.android.apps.mediashell"
+    },
+    {
+      "name": "com.google.android.backdrop"
+    },
+    {
+      "name": "com.google.android.backuptransport"
+    },
+    {
+      "name": "com.google.android.ext.services"
+    },
+    {
+      "name": "com.google.android.ext.shared"
+    },
+    {
+      "name": "com.google.android.feedback"
+    },
+    {
+      "name": "com.google.android.gms"
+    },
+    {
+      "name": "com.google.android.gsf"
+    },
+    {
+      "name": "com.google.android.inputmethod.latin"
+    },
+    {
+      "name": "com.google.android.katniss"
+    },
+    {
+      "name": "com.google.android.leanbacklauncher"
+    },
+    {
+      "name": "com.google.android.leanbacklauncher.partnercustomizer"
+    },
+    {
+      "name": "com.google.android.leanbacklauncher.partnerwidget"
+    },
+    {
+      "name": "com.google.android.leanbacklauncher.recommendations"
+    },
+    {
+      "name": "com.google.android.marvin.talkback"
+    },
+    {
+      "name": "com.google.android.music",
+      "leanback": "com.google.android.music/com.google.android.music.tv.HomeActivity"
+    },
+    {
+      "name": "com.google.android.onetimeinitializer"
+    },
+    {
+      "name": "com.google.android.packageinstaller"
+    },
+    {
+      "name": "com.google.android.partnersetup"
+    },
+    {
+      "name": "com.google.android.play.games",
+      "leanback": "com.google.android.play.games/com.google.android.apps.play.games.app.atv.features.home.HomeActivity"
+    },
+    {
+      "name": "com.google.android.speech.pumpkin"
+    },
+    {
+      "name": "com.google.android.sss.authbridge"
+    },
+    {
+      "name": "com.google.android.syncadapters.calendar"
+    },
+    {
+      "name": "com.google.android.syncadapters.contacts"
+    },
+    {
+      "name": "com.google.android.tts"
+    },
+    {
+      "name": "com.google.android.tungsten.setupwraith"
+    },
+    {
+      "name": "com.google.android.tv.bugreportsender"
+    },
+    {
+      "name": "com.google.android.tv.frameworkpackagestubs"
+    },
+    {
+      "name": "com.google.android.tv.remote.service"
+    },
+    {
+      "name": "com.google.android.tvlauncher",
+      "home": "com.google.android.tvlauncher/com.google.android.tvlauncher.MainActivity"
+    },
+    {
+      "name": "com.google.android.tvrecommendations"
+    },
+    {
+      "name": "com.google.android.videos",
+      "leanback": "com.google.android.videos/com.google.android.videos.tv.presenter.activity.TvLauncherActivity"
+    },
+    {
+      "name": "com.google.android.webview"
+    },
+    {
+      "name": "com.google.android.youtube.tv",
+      "leanback": "com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.ShellActivity"
+    },
+    {
+      "name": "com.netflix.ninja",
+      "leanback": "com.netflix.ninja/com.netflix.ninja.MainActivity"
+    },
+    {
+      "name": "com.realtek.netflix.setting"
+    },
+    {
+      "name": "com.tcl.appmarket2"
+    },
+    {
+      "name": "com.tcl.appstatecontroller"
+    },
+    {
+      "name": "com.tcl.audioplayer"
+    },
+    {
+      "name": "com.tcl.autopair"
+    },
+    {
+      "name": "com.tcl.bi"
+    },
+    {
+      "name": "com.tcl.common.terminalmanagerplus"
+    },
+    {
+      "name": "com.tcl.copydatatotv"
+    },
+    {
+      "name": "com.tcl.esticker"
+    },
+    {
+      "name": "com.tcl.factory.view"
+    },
+    {
+      "name": "com.tcl.framework.custom"
+    },
+    {
+      "name": "com.tcl.imageplayer"
+    },
+    {
+      "name": "com.tcl.initsetup"
+    },
+    {
+      "name": "com.tcl.inputmethod.international"
+    },
+    {
+      "name": "com.tcl.keycustomfunctionservice",
+      "home": "com.tcl.keycustomfunctionservice/com.tcl.keycustomfunctionservice.FallbackHome"
+    },
+    {
+      "name": "com.tcl.keyhelp"
+    },
+    {
+      "name": "com.tcl.partnercustomizer",
+      "leanback": "com.tcl.partnercustomizer/com.tcl.partnercustomizer.tkey.TKeyActivity"
+    },
+    {
+      "name": "com.tcl.partnercustomizer.resource"
+    },
+    {
+      "name": "com.tcl.rc.ota"
+    },
+    {
+      "name": "com.tcl.settings"
+    },
+    {
+      "name": "com.tcl.sourcemananger"
+    },
+    {
+      "name": "com.tcl.systemuioverlay"
+    },
+    {
+      "name": "com.tcl.tcl_bt_rcu_service"
+    },
+    {
+      "name": "com.tcl.tv",
+      "leanback": "com.tcl.tv/com.tcl.tv.TVActivity"
+    },
+    {
+      "name": "com.tcl.tvinput"
+    },
+    {
+      "name": "com.tcl.tvpassthrough"
+    },
+    {
+      "name": "com.tcl.tvweishi",
+      "leanback": "com.tcl.tvweishi/com.tcl.tvweishi.activity.StartActivity"
+    },
+    {
+      "name": "com.tcl.ui_mediaCenter",
+      "leanback": "com.tcl.ui_mediaCenter/com.tcl.ui_mediaCenter.main.MainActivity"
+    },
+    {
+      "name": "com.tcl.useragreement"
+    },
+    {
+      "name": "com.tcl.usercenter"
+    },
+    {
+      "name": "com.tcl.versionUpdateApp"
+    },
+    {
+      "name": "com.tcl.videoplayer"
+    },
+    {
+      "name": "com.tcl.xian.StartandroidService"
+    },
+    {
+      "name": "com.wbd.stream",
+      "system": false,
+      "leanback": "com.wbd.stream/com.wbd.beam.BeamActivity"
+    },
+    {
+      "name": "tv.pluto.android",
+      "system": false,
+      "leanback": "tv.pluto.android/com.paramount.android.pplus.features.splash.tv.SplashMediatorActivity"
+    }
+  ],
+  "settings": {
+    "global": {
+      "adb_enabled": "1",
+      "development_settings_enabled": "1",
+      "window_animation_scale": "0.0",
+      "transition_animation_scale": "0.0",
+      "animator_duration_scale": "0.0"
+    },
+    "secure": {
+      "screensaver_enabled": "1",
+      "screensaver_components": "com.google.android.backdrop/.Backdrop",
+      "screensaver_activate_on_sleep": "1"
+    }
+  },
+  "preferred_home": null,
+  "supports_default_state": true,
+  "hijack_home_without_stock": false,
+  "refuse_install": false,
+  "stock_home_priority": 2
+}
